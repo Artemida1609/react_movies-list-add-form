@@ -46,9 +46,7 @@ export const NewMovie = ({ onAdd }: AddMovie) => {
         name="title"
         label="Title"
         value={titleValue}
-        onChange={event => {
-          setTitleValue(event.valueOf());
-        }}
+        onChange={newValue => setTitleValue(newValue)}
         required
       />
 
@@ -56,7 +54,7 @@ export const NewMovie = ({ onAdd }: AddMovie) => {
         name="description"
         label="Description"
         value={descriptionValue}
-        onChange={event => setDescriptionValue(event.valueOf())}
+        onChange={newValue => setDescriptionValue(newValue)}
       />
 
       <TextField
@@ -64,9 +62,7 @@ export const NewMovie = ({ onAdd }: AddMovie) => {
         label="Image URL"
         value={imgUrlValue}
         required
-        onChange={event => {
-          setImgUrlValue(event.valueOf());
-        }}
+        onChange={newValue => setImgUrlValue(newValue)}
       />
 
       <TextField
@@ -74,9 +70,7 @@ export const NewMovie = ({ onAdd }: AddMovie) => {
         label="Imdb URL"
         value={imdbUrlValue}
         required
-        onChange={event => {
-          setImdbUrlValue(event.valueOf());
-        }}
+        onChange={newValue => setImdbUrlValue(newValue)}
       />
 
       <TextField
@@ -84,9 +78,7 @@ export const NewMovie = ({ onAdd }: AddMovie) => {
         label="Imdb ID"
         value={imdbIdValue}
         required
-        onChange={event => {
-          setImdbIdValue(event.valueOf());
-        }}
+        onChange={newValue => setImdbIdValue(newValue)}
       />
 
       <div className="field is-grouped">

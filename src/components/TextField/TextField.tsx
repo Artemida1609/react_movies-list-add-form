@@ -39,7 +39,7 @@ export const TextField: React.FC<Props> = ({
   // To show errors only if the field was touched (onBlur)
   const [touched, setTouched] = useState(false);
   const isUrlField = name === 'imgUrl' || name === 'imdbUrl';
-  const isUrlError = isUrlField && isValidUrl(value);
+  const isUrlError = isUrlField && !isValidUrl(value);
   const hasUrlError = isUrlField && value !== '' && isUrlError;
   const hasEmptyError = required && !value;
 
@@ -70,7 +70,7 @@ export const TextField: React.FC<Props> = ({
         <p className="help is-danger">
           {hasEmptyError
             ? `${label} is required`
-            : hasUrlError && `${label} url is invalid`}
+            : hasUrlError && `${label} is invalid`}
         </p>
       )}
     </div>
